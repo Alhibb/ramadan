@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Media Pro for Islamic Content</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --primary-color: #2A9D8F; /
+      --secondary-color: #E9C46A; 
+      --accent-color: #F4A261;  
+      --bg-color: #F8F9FA;      
+      --text-color: #343A40;      
+      --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      line-height: 1.6;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--primary-color);
+      transition: color 0.3s ease-in-out;
+    }
+
+    a:hover {
+      color: var(--secondary-color);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background-color: var(--secondary-color);
+      color: #ec8524;
+      border-radius: 0.5rem;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      box-shadow: var(--box-shadow);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0.75rem 1.25rem rgba(0, 0, 0, 0.15);
+      background-color: #D6B057; 
+    }
+
+    nav {
+      background-color: #fff;
+      padding: 1rem 2rem;
+      box-shadow: var(--box-shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100; 
+      height: 15vh; 
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: flex-start;  
+      align-items: center;
+    }
+
+     nav img {
+          max-height: 80px; 
+          width: auto;
+    }
+
+    .hero {
+      background: linear-gradient(to right, var(--bg-color) 50%, var(--accent-color) 50%);
+      padding: 4rem 0;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem; 
+    }
+
+    .hero-text {
+      width: 55%;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-color);
+      margin-bottom: 1rem;
+    }
+
+    .hero-image {
+      width: 40%;
+      border-radius: 0.75rem;
+      box-shadow: var(--box-shadow);
+      overflow: hidden; 
+    }
+
+    .hero-image img {
+      transition: transform 0.3s ease-in-out; 
+    }
+
+    .hero-image:hover img {
+      transform: scale(1.05); 
+    }
+
+   
+    .benefits {
+      padding: 4rem 0;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .benefit-card {
+      background-color: #fff;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      box-shadow: var(--box_shadow);
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      border: 1px solid #ddd; 
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0.75rem 1.25rem rgba(0, 0, 0, 0.1);
+    }
+
+    .benefit-card h3 {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-bottom: 0.75rem;
+        display: flex;                
+      align-items: center;        
+      gap: 0.5rem;
+    }
+
+    .benefit-card p {
+      color: var(--text-color);
+      font-size: 1.1rem;
+    }
+
+
+    .testimonials {
+      background-color: var(--bg-color);
+      padding: 4rem 0;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .testimonial-card {
+      background-color: #fff;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      box-shadow: var(--box-shadow);
+    }
+
+    .testimonial-card iframe {
+      width: 100%;
+      border: none;
+      border-radius: 0.5rem;
+      min-height: 300px;
+    }
+
+    .registration {
+      background-color: #fff;
+      padding: 4rem 0;
+      text-align: center;
+      box-shadow: var(--box-shadow); 
+      border-radius: 0.75rem;
+      margin: 2rem 0;
+    }
+
+    .registration p {
+      font-size: 1.2rem;
+      color: var(--text-color);
+      margin-bottom: 1.5rem;
+    }
+
+    footer {
+      background-color: #343A40;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 1rem;
+      margin-top: 4rem;
+    }
+
+    footer a {
+      color: var(--secondary-color);
+    }
+
+    @media (max-width: 992px) {
+      .container {
+        padding: 1.5rem;
+      }
+
+      .hero-text {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-image {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: 2.75rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2.25rem;
+      }
+
+      .benefit-grid {
+        grid-template-columns: 1fr; 
+      }
+
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="#"><img src="logo.jpg" alt="BT-HUB Logo"></a> 
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Lights, Camera, Action! <br> Become a Digital Media Pro for Islamic Content</h1>
+          <p>The Digital Shift is Happening – Are You Ready?</p>
+          <p>Islamic education and media have gone digital. If you're still relying on outdated methods, struggling with low-quality content, or missing out on career opportunities, it's time for a change!</p>
+          <p>What if you could film, edit, and stream high-quality Islamic content with confidence? What if you could use AI to simplify your work and reach millions online?</p>
+          <p>This is your chance! Introducing the Pre-Ramadan 3-Day Training Workshop on Islamic Computing & Media Management!</p>
+          <a href="https://bit.ly/2ramadan" class="btn">Register Now</a>
+        </div>
+        <div class="hero-image">
+          <img src="ramadan.jpg" alt="Digital Media Pro">
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <h2 class="section-title">What You’ll Gain in Just 3 Days!</h2>
+      <div class="benefit-grid">
+        <div class="benefit-card">
+          <h3><i class="fas fa-video"></i> Cinematography & Camera Skills</h3>
+          <p>Learn how to shoot professional videos.</p>
+        </div>
+        <div class="benefit-card">
+          <h3><i class="fas fa-edit"></i> Video & Sound Editing</h3>
+          <p>Make your Islamic content stand out!</p>
+        </div>
+        <div class="benefit-card">
+          <h3><i class="fas fa-robot"></i> AI for Arabic & Islamic Studies</h3>
+          <p>Discover groundbreaking tools for research & education.</p>
+        </div>
+        <div class="benefit-card">
+          <h3><i class="fas fa-broadcast-tower"></i> Live Streaming & Social Media Mastery</h3>
+          <p>Build a strong online presence.</p>
+        </div>
+        <div class="benefit-card">
+          <h3><i class="fas fa-certificate"></i> Get Certified</h3>
+          <p>Boost your resume & credibility in the Islamic digital space!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <h2 class="section-title">What Makes This Training Different?</h2>
+      <div class="benefit-grid">
+        <div class="benefit-card">
+          <h3><i class="fas fa-mosque"></i> Designed for Islamic Media</h3>
+          <p>This isn’t just another tech class! It’s customized for Islamic educators, students, and content creators.</p>
+        </div>
+        <div class="benefit-card">
+          <h3><i class="fas fa-hands-on"></i> Hands-On & Practical</h3>
+          <p>No fluff, no theory—just real-world skills!</p>
+        </div>
+        <div class="benefit-card">
+          <h3><i class="fas fa-hand-holding-usd"></i> Affordable Investment</h3>
+          <p>Only ₦3,500 for a training that can change your future!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2 class="section-title">What Past Participants Are Saying</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <iframe
+            src="https://www.youtube.com/embed/tXfbrlUd9Bo?si=pKfxBW1nDPIqa6nj"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="testimonial-card">
+          <iframe
+            src="https://www.youtube.com/embed/mAzLO3QM-dk?si=lWlm9Nnyf0lEvgYq"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="registration">
+      <h2 class="section-title">Ready to Become a Digital Media Pro?</h2>
+      <p>Don't miss this opportunity! Limited slots available.</p>
+      <p>
+        Date: 28th Feb – 2nd March 2025 | 10 AM – 1 PM Daily<br>
+        Venue: BT-HUB Center, Western Way, G.RA. Sabon Gari, Kaduna State.
+      </p>
+      <a href="#" class="btn">Register Now</a>
+      <p>Have questions? Call/WhatsApp +2349022515835</p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>
+      © 2025 BT-HUB. All Rights Reserved. | Email: info@bthub.com.ng | Phone: +2349022515835
+    </p>
+    <p><a href="https://bit.ly/2ramadan" target="_blank">Learn More</a></p>
+  </footer>
+
+</body>
+</html>
